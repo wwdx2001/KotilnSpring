@@ -1,4 +1,4 @@
-package org.example.kotlinspringdemo.controller
+package org.example.kotlinspringdemo.repository
 
 import org.example.kotlinspringdemo.entity.UserEntity
 import org.springframework.data.jdbc.repository.query.Query

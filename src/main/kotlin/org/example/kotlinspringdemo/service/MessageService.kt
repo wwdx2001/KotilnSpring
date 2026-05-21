@@ -1,7 +1,7 @@
-package org.example.kotlinspringdemo
+package org.example.kotlinspringdemo.service
 
-import org.example.kotlinspringdemo.controller.MessageRepository
 import org.example.kotlinspringdemo.entity.UserEntity
+import org.example.kotlinspringdemo.repository.MessageRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

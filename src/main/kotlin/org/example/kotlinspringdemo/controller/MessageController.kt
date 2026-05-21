@@ -1,6 +1,6 @@
 package org.example.kotlinspringdemo.controller
 
-import org.example.kotlinspringdemo.MessageService
+import org.example.kotlinspringdemo.service.MessageService
 import org.example.kotlinspringdemo.entity.UserEntity
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -16,7 +16,7 @@ class MessageController(@Autowired private val messageService: MessageService) {
     @GetMapping("/user/getUsers")
     fun listUsers() = messageService.findUser()
 
-    @PostMapping("user/register")
+    @PostMapping("/user/register")
     fun register(@RequestParam username: String, @RequestParam password: String): ResponseEntity<UserEntity> {
         val user = UserEntity((username + password).hashCode(), username, password)
         user.version = 0
@@ -24,7 +24,7 @@ class MessageController(@Autowired private val messageService: MessageService) {
         return ResponseEntity.created(URI.create("/users/${saveMessage.id}")).body(saveMessage)
     }
 
-    @PostMapping("user/login")
+    @PostMapping("/user/login")
     fun login(@RequestParam username: String, @RequestParam password: String): Boolean {
 
         val saveMessage : UserEntity? = messageService.login(username, password)
