@@ -12,9 +12,10 @@ class FoodMenuEntity(
     var foodName: String,
     var foodDetail: String,
     var foodImg: String,
+    var categoryId: Int?
 ) {
 
-    constructor(): this(0,"", "", "") {}
+    constructor(): this(0,"", "", "", 0) {}
 
     @Version
     var version : Int = 0
